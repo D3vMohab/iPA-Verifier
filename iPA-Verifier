@@ -17,7 +17,7 @@ echo $s >> "mb.plist"
 rm *.mobileprovision
 
 
-a=$(xmllint --xpath "/plist/dict/array/data" *.plist)
+a=$(xpath -q -e "/plist/dict/array/data" *.plist)
 
 b=$(echo $a | sed s/"<\/data>"// | sed s/"<data>"//)
 
